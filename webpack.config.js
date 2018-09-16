@@ -22,7 +22,15 @@ module.exports = {
         rules: [
             { test: /\.(ts|tsx)$/, loader: 'awesome-typescript-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            { test: /\.(png|jpg|gif)$/, use: [{ loader: 'url-loader', options: { limit: 8192 } }] }
+            { test: /\.(png|jpg|gif)$/, use: [{ loader: 'url-loader', options: { limit: 8192 } }] },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            }
         ],
     },
     mode: "development",

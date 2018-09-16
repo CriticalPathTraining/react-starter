@@ -1,27 +1,33 @@
 import * as React from 'react';
+import * as AppImages from './../images/AppImages';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
-
-import './App.css';
+import './../../node_modules/office-ui-fabric-react/dist/css/fabric.min.css';
+import './App.scss';
 
 export default class App extends React.Component<any, any> {
 
-  render() {
+  render(): JSX.Element {
     return (
-      <div id="page-container" className="container">
-
-        <div className="row navbar navbar-expand-sm navbar-dark bg-dark" role="navigation" >
-          <h2 style={{ 'color': 'white' }} >React Starter Project</h2>
+      <div id="app-container" >
+        <div id="banner-row" >
+          <div id="banner" >
+            <div>React Starter Project</div>
+          </div>
         </div>
+        <div id="content-body-row" >
+          <div id="content-body">
 
-        <div className="jumbotron">
-          <h3>Here's your big opportunity</h3>
-          <div>Time to build a single page application (SPA) with React.js.</div>
+            <h3>It's time to get started with React.js</h3>
+
+            <p>This started project has been created to help you get started developing with React.js, TypeScript, Webpack and the Office UI Fabric.</p>
+
+            <div className="reactImage">
+              <img src={AppImages.React} alt="React.js Logo" />
+            </div>
+
+          </div>
         </div>
-
       </div>
     );
   }
-
 }
